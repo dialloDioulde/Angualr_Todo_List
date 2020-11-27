@@ -6,7 +6,7 @@ import {TodoItemData} from './dataTypes/TodoItemData';
 @Injectable()
 export class TodoService {
 
-  private todoListSubject = new BehaviorSubject<TodoListData>( {label: 'TodoList', items: []} );
+  private todoListSubject = new BehaviorSubject<TodoListData>( {label: 'TodoList',  items: []} );
 
   constructor() { }
 
@@ -26,9 +26,11 @@ export class TodoService {
     const tdl = this.todoListSubject.getValue();
     this.todoListSubject.next( {
       label: tdl.label,
-      items: tdl.items.map( I => items.indexOf(I) === -1 ? I : ({label: I.label, isDone}) )
+      items: tdl.items.map( I => items.indexOf(I) === -1 ? I : ({label: I.label,  isDone}) )
     });
   }
+
+
 
   appendItems( ...items: TodoItemData[] ) {
     const tdl = this.todoListSubject.getValue();

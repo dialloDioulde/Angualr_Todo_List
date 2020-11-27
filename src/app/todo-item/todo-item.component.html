@@ -2,12 +2,31 @@
   <input 	class			= "toggle"
           type			= "checkbox"
           name			= "fait"
+          [ngModel]="item.isDone"
+          (ngModelChange) = "itemDone($event)"
   />
-  <label 	class="texte"></label>
-  <button class="destroy"></button>
+
+  <div *ngIf="item.isDone; else showLabel" class="completed">
+    <label>{{label}}</label>
+  </div>
+
+  <ng-template #showLabel>
+      <label class="text">
+        <form (submit)="itemLabel(newLab.value)">
+          <input name="label" class="tes" [ngModel]="item.label" #newLab />
+        </form>
+      </label>
+  </ng-template>
+
+
+  <button class="destroy" (click)="itemDelete()"></button>
 </div>
-<form>
-  <input  #newTextInput
-          name    = "newTextInput"
-          class   = "edit"/>
+
+<form (submit)="itemLabel(newTextInput .value)">
+  <input #newTextInput name="newTextInput" class="edit"
+  [ngModel]="item.label"
+  />
 </form>
+
+
+

@@ -1,4 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TodoItemData} from "../dataTypes/TodoItemData";
+import {TodoService} from "../todo.service";
+import {TodoListData} from "../dataTypes/TodoListData";
 
 @Component({
   selector: 'app-todo-item',
@@ -7,9 +10,32 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TodoItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() private item: TodoItemData;
+
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+  }
+
+  get label(): string {
+    return this.item.label;
+  }
+
+
+
+  itemDone(done:boolean){
+    this.todoService.setItemsDone(done,this.item);
+  }
+
+
+  itemLabel(label:string){
+    this.todoService.setItemsLabel(label,this.item);
+  }
+
+
+  itemDelete() {
+    this.todoService.removeItems(this.item);
   }
 
 }
