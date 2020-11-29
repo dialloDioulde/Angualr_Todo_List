@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "MIASHS-M2-TP3",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

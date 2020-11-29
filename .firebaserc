@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-todolist-27ed3": {
+      "hosting": {
+        "MIASHS-M2-TP3": [
+          "angular-todolist-27ed3"
+        ]
+      }
+    }
+  }
+}
