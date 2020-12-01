@@ -29,9 +29,15 @@ export class TodoItemComponent implements OnInit {
   }
 
 
-  itemLabel(label:string){
-    this.todoService.setItemsLabel(label,this.item);
+   itemLabel(label: string) {
+    if (label) {
+      this.todoService.setItemsLabel(label, this.item);
+    } else {
+      this.todoService.removeItems(this.item);
+    }
+
   }
+
 
 
   itemDelete() {
