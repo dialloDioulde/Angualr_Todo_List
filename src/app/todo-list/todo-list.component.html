@@ -1,45 +1,48 @@
-<section class="todoapp">
-  <header class="header">
-    <h1>{{label}}</h1>
-    <form (submit)="appendItem(newTodoInput.value); newTodoInput.value=''">
-      <input  #newTodoInput
-              name        = "newTodoInput"
-              class       = "new-todo"
-              placeholder = "Que faire?"
-              autofocus />
-    </form>
-  </header>
-  <section class="main">
-    <input  class="toggle-all"
-            type="checkbox"
-            name="toggleAll"
+<div class="container todoContainer">
+  <section class="todoapp">
+    <header class="header">
+      <h1>{{label}}</h1>
+      <form (submit)="appendItem(newTodoInput.value); newTodoInput.value=''">
+        <input  #newTodoInput
+                name        = "newTodoInput"
+                class       = "new-todo"
+                placeholder = "Que faire?"
+                autofocus />
+      </form>
+    </header>
+    <section class="main">
+      <input  class="toggle-all"
+              type="checkbox"
+              name="toggleAll"
 
-            *ngIf=" todoList.items.length !=  0"
-            (click)="allItemIsDone($event)"
-    />
-    <ul class="todo-list">
-      <li *ngFor="let item of itemFiltered()">
+              *ngIf=" todoList.items.length !=  0"
+              (click)="allItemIsDone($event)"
+      />
+      <ul class="todo-list">
+        <li *ngFor="let item of itemFiltered()">
 
-        <app-todo-item [item]=item></app-todo-item>
-      </li>
-    </ul>
+          <app-todo-item [item]=item></app-todo-item>
+        </li>
+      </ul>
+    </section>
+    <footer class="footer" *ngIf=" todoList.items.length !=  0">
+      <span class="todo-count" *ngIf="countItemNotDone() > 1" ><strong>{{countItemNotDone()}}</strong> restantes</span>
+      <span class="todo-count" *ngIf="countItemNotDone() == 1" ><strong>{{countItemNotDone()}}</strong> restante</span>
+      <ul class="filters">
+        <li>
+          <a [ngClass]="{'active': filter === 'all'}" (click)="filter='all'">Tous</a>
+        </li>
+        <li>
+          <a [ngClass]="{'active': filter === 'active'}" (click)="filter='active'">Actifs</a>
+        </li>
+        <li>
+          <a [ngClass]="{'active': filter === 'completed'}" (click)="filter='completed'">Complétés</a>
+        </li>
+      </ul>
+      <button *ngIf="clearCompletedBtn()" (click)="clearCompleted()" class="clear-completed">Supprimer cochées</button>
+    </footer>
   </section>
-  <footer class="footer" *ngIf=" todoList.items.length !=  0">
-    <span class="todo-count" *ngIf="countItemNotDone() > 1" ><strong>{{countItemNotDone()}}</strong> restantes</span>
-    <span class="todo-count" *ngIf="countItemNotDone() == 1" ><strong>{{countItemNotDone()}}</strong> restante</span>
-    <ul class="filters">
-      <li>
-        <a [ngClass]="{'active': filter === 'all'}" (click)="filter='all'">Tous</a>
-      </li>
-      <li>
-        <a [ngClass]="{'active': filter === 'active'}" (click)="filter='active'">Actifs</a>
-      </li>
-      <li>
-        <a [ngClass]="{'active': filter === 'completed'}" (click)="filter='completed'">Complétés</a>
-      </li>
-    </ul>
-    <button *ngIf="clearCompletedBtn()" (click)="clearCompleted()" class="clear-completed">Supprimer cochées</button>
-  </footer>
-</section>
-<hr *ngIf=" todoList.items.length !=  0"/>
+  <hr *ngIf=" todoList.items.length !=  0"/>
 
+
+</div>

@@ -1,33 +1,37 @@
 
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mt-5">
-  <div class="form-group ">
+<div class="container pageWidth">
 
-    <input type="email" formControlName="email" class="form-control" id="email" [ngClass]="{'is-invalid': submited && fieldValidation.email.errors}"
-           placeholder="Entrer votre adraisse Email"/>
-        <div *ngIf="submited && fieldValidation.email.errors" class="invalid-feedback">
-          <div *ngIf="fieldValidation.email.errors.required" >L'adresse Email est Obligatoire !</div>
-          <div *ngIf="fieldValidation.email.errors.email">L'adresse mail doit être valide !</div>
-       </div>
-  </div>
-  <div class="form-group">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mt-5 pageForm">
+    <div class="form-group ">
 
-    <input type="password" formControlName="password" class="form-control" id="password" [ngClass]="{'is-invalid': submited && fieldValidation.password.errors}"
-           placeholder="Entrer un Mot de passe"/>
+      <input type="email" formControlName="email" class="form-control" id="email" [ngClass]="{'is-invalid': submited && fieldValidation.email.errors}"
+             placeholder="Entrer votre adraisse Email"/>
+      <div *ngIf="submited && fieldValidation.email.errors" class="invalid-feedback">
+        <div *ngIf="fieldValidation.email.errors.required" >L'adresse Email est Obligatoire !</div>
+        <div *ngIf="fieldValidation.email.errors.email">L'adresse mail doit être valide !</div>
+      </div>
+    </div>
+    <div class="form-group">
+
+      <input type="password" formControlName="password" class="form-control" id="password" [ngClass]="{'is-invalid': submited && fieldValidation.password.errors}"
+             placeholder="Entrer un Mot de passe"/>
       <div *ngIf="submited && fieldValidation.password.errors" class="invalid-feedback">
         <div *ngIf="fieldValidation.password.errors.required">Le Mot de passe est Obligatoire !</div>
         <div *ngIf="fieldValidation.password.errors.minlength" >Le nombre de Caractère doit être égal ou supérieur à 6 !</div>
       </div>
-  </div>
-  <div class="form-group">
+    </div>
+    <div class="form-group">
 
-    <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword" [ngClass]="{'is-invalid': submited && fieldValidation.confirmPassword.errors}"
-           placeholder="Confirmer votre Mot de passe"/>
+      <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword" [ngClass]="{'is-invalid': submited && fieldValidation.confirmPassword.errors}"
+             placeholder="Confirmer votre Mot de passe"/>
       <div *ngIf="submited && fieldValidation.confirmPassword.errors" class="invalid-feedback">
         <div *ngIf="fieldValidation.confirmPassword.errors.required">Veuillez Confirmer votre Mot de passe !</div>
         <div *ngIf="fieldValidation.confirmPassword.errors.mustMatch">Les Mots de passe doivent correspondre</div>
       </div>
-  </div>
+    </div>
 
-  <button type="submit" [disabled]=""  class="btn btn-primary">S'inscrire</button>
-</form>
+    <button type="submit" [disabled]=""  class="btn btn-primary">Inscription</button>
+    <a [routerLink]="['/loginUser']" class="text-decoration-none text-info ml-5">Se Connecter</a>
+  </form>
+</div>
