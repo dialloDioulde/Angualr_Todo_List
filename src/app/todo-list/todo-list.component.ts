@@ -117,20 +117,32 @@ export class TodoListComponent implements OnInit {
   }
   // Fin : Suppression de tous les items marqués en IsDone
 
+  //
+  deleteAllItems(){
+    for(var item of this.todoList.items){
+      this.todoService.removeItems(item);
+    }
+  }
 
   //
+
+  // Début : Marquage des items en IsDone
   itemDone(item: TodoItemData, done:boolean){
     this.todoService.setItemsDone(done,item);
   }
+  // Fin : Marquage des items en IsDone
 
+  // Début : Mise à Jour des items
   itemLabel(item: TodoItemData, label:string){
     this.todoService.setItemsLabel(label, item);
   }
+  // Fin : Mise à Jour des items
 
+  // Début : Supprésion d'un item
   itemDelete(item: TodoItemData) {
     this.todoService.removeItems(item);
   }
-  //
+  // Fin : Supprésion d'un item
 
 }
 

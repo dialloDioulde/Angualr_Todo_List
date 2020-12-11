@@ -38,6 +38,7 @@
         <a [ngClass]="{'active': filter === 'completed'}" (click)="filter='completed'">Complétés</a>
       </li>
     </ul>
+    <button (click)="deleteAllItems($event)" class="deleteAll">Éffacer Tout</button>
     <button *ngIf="clearCompletedBtn()" (click)="clearCompleted()" class="clear-completed">Supprimer cochées</button>
   </footer>
 </section>
