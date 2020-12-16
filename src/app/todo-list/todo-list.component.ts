@@ -14,7 +14,8 @@ export class TodoListComponent implements OnInit {
 
   private todoItemData: TodoItemData;
   private todoList: TodoListData;
-  filter: string;
+
+  filter: string; // On définit cette variable pour gérér la navigation du TodoList
 
   constructor(private todoService: TodoService) {
     todoService.getTodoListDataObservable().subscribe( tdl => this.todoList = tdl );
@@ -35,14 +36,14 @@ export class TodoListComponent implements OnInit {
 
   // Début : Gestion de la Navigation du TodoList
   itemFiltered(){
-    if( this.filter === 'all' ){
+    if( this.filter === 'all' ){ // Ici on obtient tous les items du TodoList et c'est cette liste qui est affichée par défaut
       return this.todoList.items;
     }
-    else if( this.filter === 'active') {
+    else if( this.filter === 'active') { // Ici on obtient que les items non marqués en IsDone
       return this.todoList.items.filter(item => !item.isDone);
 
     }
-    else if(this.filter == 'completed'){
+    else if(this.filter == 'completed'){ // Ici on obtient les items marqués en IsDone
       return this.todoList.items.filter(item => item.isDone);
 
     }
@@ -117,14 +118,14 @@ export class TodoListComponent implements OnInit {
   }
   // Fin : Suppression de tous les items marqués en IsDone
 
-  //
+  // Début : Suppression de tous les items du TodoList
   deleteAllItems(){
     for(var item of this.todoList.items){
       this.todoService.removeItems(item);
     }
   }
 
-  //
+  // Fin : Suppression de tous les items du TodoList
 
   // Début : Marquage des items en IsDone
   itemDone(item: TodoItemData, done:boolean){

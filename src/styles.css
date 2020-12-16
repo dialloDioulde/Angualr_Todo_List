@@ -265,7 +265,7 @@ label[for='toggle-all'] {
 
 .footer {
   color: #777;
-  padding: 10px 15px;
+  padding: 10px 4px;
   height: 20px;
   text-align: center;
   border-top: 1px solid #e6e6e6;
@@ -328,25 +328,27 @@ label[for='toggle-all'] {
 
 .clear-completed,
 html .clear-completed:active {
-  float: right;
+  /*float: right;*/
   position: relative;
   line-height: 20px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
+  /*margin-right: 2px;*/
+  margin-left: 4px;
 
 }
 
 .deleteAll,
 html .deleteAll:active {
-  float: right;
+  /*float: right;
   margin-left: 20px;
   position: relative;
   line-height: 20px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
-  margin-right: 4px;
+  margin-right: 4px;*/
   color: #af5b5e;
 }
 
