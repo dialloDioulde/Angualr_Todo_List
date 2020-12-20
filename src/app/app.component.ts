@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import  firebase from "firebase";
+import * as  firebase from "firebase";
 import {TodoService} from './todo.service';
 import {TodoListData} from './dataTypes/TodoListData';
 import {TodoItemData} from './dataTypes/TodoItemData';

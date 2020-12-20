@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import firebase from 'firebase';
+import * as  firebase from "firebase";
 import { User } from '../dataTypes/User';
 
 
