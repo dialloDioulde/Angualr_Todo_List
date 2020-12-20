@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 
 
+// On crée les routes de notre Application
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'header', component: HeaderComponent },

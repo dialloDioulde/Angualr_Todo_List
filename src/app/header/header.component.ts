@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
+  // Permet de savoir si l'Utilisateur est connecté ou pas
   isAuth() {
     return this.authService.isAuthenticated();
   }
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Déconnexion de l'Utilisateur
   logoutUser() {
     this.authService.logoutUser();
   }
