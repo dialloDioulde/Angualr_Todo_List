@@ -37,6 +37,13 @@
     email : angular@angular.fr
     mot de passe : testtest
     
+  
+3. Problèmes : 
+Vous allez peut être certainement rencontrer un problème avec git lorsque vous allez essayer de changer de branche pour faire git pull             nomBranche:nomBranche en étant dans la branche Main.
+  
+  Pour résoudre ce problème j'ai tout essayé et ça ne marche pas, la solution que je vous propose est la suivante : 
+  
+  Je viens de faire un ZIP de mon projet en Local que je garde avec la bonne Date et Heure que je pourrai vous fournir en cas de problème de test de   mon projet parce que tout marche bien en LOCAL. 
     
     
  
