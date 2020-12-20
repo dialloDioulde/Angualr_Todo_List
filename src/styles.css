@@ -64,7 +64,7 @@ input[type="checkbox"] {
 
 .todoapp {
   background: #fff;
-  margin: 130px 5px 40px 5px;
+  margin: 130px 4px 40px 4px;
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
   0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -294,7 +294,7 @@ label[for='toggle-all'] {
   text-align: left;
   font-size: 16px;
   margin-top: 2px;
-  margin-right: 1px;
+  margin-right: 6px;
 
 }
 
@@ -319,7 +319,7 @@ label[for='toggle-all'] {
 .filters li a {
   color: inherit;
   margin: 3px;
-  padding: 3px 7px;
+  padding: 3px 5px;
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 3px;
