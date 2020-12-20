@@ -2,11 +2,12 @@
   <header class="header">
     <h1>{{label}}</h1>
     <form (submit)="appendItem(newTodoInput.value); newTodoInput.value=''">
-      <input  #newTodoInput
-              name        = "newTodoInput"
-              class       = "new-todo"
-              placeholder = "Que faire?"
-              autofocus />
+      <input
+        #newTodoInput
+        name        = "newTodoInput"
+        class       = "new-todo"
+        placeholder = "Que faire?"
+        autofocus />
     </form>
   </header>
   <section class="main">
@@ -14,7 +15,7 @@
             type="checkbox"
             name="toggleAll"
 
-            *ngIf=" todoList.items.length !=  0"
+            *ngIf=" todoList.items.length !== 0"
             (click)="allItemIsDone($event)"
     />
     <ul class="todo-list">
@@ -24,7 +25,7 @@
       </li>
     </ul>
   </section>
-  <footer class="footer" *ngIf=" todoList.items.length !=  0">
+  <footer class="footer" *ngIf=" todoList.items.length !== 0">
     <span class="todo-count" *ngIf="countItemNotDone() > 1" ><strong>{{countItemNotDone()}}</strong> restantes</span>
     <span class="todo-count" *ngIf="countItemNotDone() == 1" ><strong>{{countItemNotDone()}}</strong> restante</span>
     <ul class="filters">
@@ -37,10 +38,10 @@
       <li>
         <a [ngClass]="{'active': filter === 'completed'}" (click)="filter='completed'">Complétés</a>
       </li>
-      <li><button (click)="deleteAllItems($event)" class="deleteAll">Éffacer</button></li>
+
       <li><button *ngIf="clearCompletedBtn()" (click)="clearCompleted()" class="clear-completed">Éffacer cochées</button></li>
     </ul>
   </footer>
 </section>
-<hr *ngIf=" todoList.items.length !=  0"/>
+<hr *ngIf=" todoList.items.length !==  0"/>
 

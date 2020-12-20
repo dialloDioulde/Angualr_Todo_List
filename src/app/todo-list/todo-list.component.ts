@@ -18,6 +18,7 @@ export class TodoListComponent implements OnInit {
   filter: string; // On définit cette variable pour gérér la navigation du TodoList
 
   constructor(private todoService: TodoService) {
+    todoService.dataInitialization();
     todoService.getTodoListDataObservable().subscribe( tdl => this.todoList = tdl );
   }
 
